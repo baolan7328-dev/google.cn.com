@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google - 中国服务加速版</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: space-between;
+            background-color: #ffffff;
+        }
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 30px;
+            font-size: 13px;
+        }
+        header a {
+            color: rgba(0,0,0,0.87);
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        header a:hover { text-decoration: underline; }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
+            margin-top: -50px;
+        }
+        .logo {
+            font-size: 90px;
+            font-weight: 500;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+            user-select: none;
+        }
+        .g1 { color: #4285F4; }
+        .g2 { color: #EA4335; }
+        .g3 { color: #FBBC05; }
+        .g4 { color: #4285F4; }
+        .g5 { color: #34A853; }
+        .g6 { color: #EA4335; }
+        
+        .search-box-container {
+            width: 100%;
+            max-width: 584px;
+            position: relative;
+        }
+        .search-box {
+            width: 100%;
+            height: 44px;
+            background: #fff;
+            border: 1px solid #e4e4e4;
+            border-radius: 24px;
+            padding: 0 45px;
+            box-sizing: border-box;
+            font-size: 16px;
+            outline: none;
+            transition: box-shadow 0.2s;
+        }
+        .search-box:hover, .search-box:focus {
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            border-color: rgba(223,225,229,0);
+        }
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 13px;
+            width: 20px;
+            height: 20px;
+            fill: #9aa0a6;
+        }
+        .buttons-container {
+            margin-top: 28px;
+        }
+        .btn {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-size: 14px;
+            margin: 11px 4px;
+            padding: 0 16px;
+            line-height: 36px;
+            height: 36px;
+            min-width: 54px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .btn:hover {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+            background-color: #f8f9fa;
+            border: 1px solid #dadce0;
+            color: #202124;
+        }
+        .notice {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #70757a;
+        }
+        footer {
+            background: #f2f2f2;
+            color: #70757a;
+            font-size: 14px;
+        }
+        .footer-row {
+            padding: 15px 30px;
+            border-bottom: 1px solid #dadce0;
+        }
+        .footer-row:nth-child(2) {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-row:last-child {
+            border-bottom: none;
+            text-align: center;
+            padding: 10px 30px 15px 30px;
+            font-weight: 500;
+            color: #5f6368;
+            font-size: 13px;
+        }
+        .footer-row a {
+            color: #70757a;
+            text-decoration: none;
+            margin-right: 27px;
+        }
+        .footer-row a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#">Gmail</a>
+        <a href="#">图片</a>
+    </header>
+
+    <div class="main-content">
+        <div class="logo">
+            <span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span>
+        </div>
+        
+        <form action="https://www.startpage.com/sp/search" method="POST" target="_self" class="search-box-container" id="searchForm">
+            <svg class="search-icon" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+            
+            <input type="text" name="query" class="search-box" autocomplete="off" autofocus required placeholder="在此输入内容，享受无需科学上网的谷歌结果...">
+            
+            <div style="text-align: center;" class="buttons-container">
+                <input type="submit" class="btn" value="Google 搜索">
+                <button type="button" class="btn" onclick="switchEngine()">手气不错 (切换备用源)</button>
+            </div>
+        </form>
+        
+        <!-- 已修改：Google 提供：China -->
+        <div class="notice">Google 提供： <a href="#" style="color:#1a0dab; text-decoration:none;">China</a></div>
+    </div>
+
+    <footer>
+        <div class="footer-row">中国</div>
+        <div class="footer-row">
+            <div>
+                <a href="#">关于 Google</a>
+                <a href="#">广告</a>
+                <a href="#">商务</a>
+                <a href="#">如何进行搜索</a>
+            </div>
+            <div>
+                <a href="#">隐私权</a>
+                <a href="#">条款</a>
+                <a href="#">设置</a>
+            </div>
+        </div>
+        <!-- 已新增：最下面标注 Google.cn -->
+        <div class="footer-row">
+            Google.cn
+        </div>
+    </footer>
+
+    <script>
+        let currentEngine = 'startpage';
+        function switchEngine() {
+            const form = document.getElementById('searchForm');
+            const input = form.querySelector('.search-box');
+            if(currentEngine === 'startpage') {
+                form.action = "https://cn.bing.com/search";
+                input.name = "q";
+                currentEngine = 'bing';
+                alert('已为您切换至直连备用引擎模式！');
+            } else {
+                form.action = "https://www.startpage.com/sp/search";
+                input.name = "query";
+                currentEngine = 'startpage';
+                alert('已为您切换回经典高级纯净模式！');
+            }
+        }
+    </script>
+</body>
+</html>
